@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(21, 124, 250);
+    position: fixed;
+    width: 100%;
+}
+
+.nav a{
+    text-decoration: none;
+    margin-right: 40px;
+    margin-left: 20px;
+    font-size:25px;
+    color: black;
+}
+
+.nav a:hover{
+    color: rgb(21, 124, 250);
+}
+
+.navLinks{
+    margin-left:200px ;
+}
+
+.logo{
+    width: 128px;
+    height: 54px;
+}
+
+/*  width="128" height="54" */
