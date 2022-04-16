@@ -6,7 +6,7 @@ function NavBar(props){
     return(
         <div className="nav">
                 <a href="#">
-                    <img className="logo" src="../logo.jpg" />
+                    <img className="logo" src="./imagenes/logo.jpg" />
                 </a>  
                 <div className="navLinks">
                     <a href="#">Inicio</a>
