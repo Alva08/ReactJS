@@ -1,5 +1,6 @@
 import React from "react";
 import './NavBar.css';
+import CardWidget from "../CardWidget"
 
 
 function NavBar(props){
@@ -13,6 +14,7 @@ function NavBar(props){
                     <a href="#">Productos</a>
                     <a href="#">Contacto</a>
                 </div>
+                <CardWidget/>
         </div>
     );
 }
