@@ -1,12 +1,15 @@
 import React from "react";
 import './Box.css';
+import Counter from "../counter";
 
 
-function ItemListContainer(props){
+function ItemListContainer({greetings}){
     return(
         <div className="container">
-            <h1>PRODUCTOS</h1>
+            <h1>{greetings}</h1>
+            <div className="contador"><Counter/></div>
         </div>
+        
     )
 }
 
