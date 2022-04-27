@@ -1,14 +1,16 @@
 import React from "react";
 import './NavBar.css';
-import CardWidget from "../CardWidget"
+import CardWidget from "../CardWidget/CardWidget";
 
 
 function NavBar(props){
     return(
         <div className="nav">
-                <a href="#">
-                    <img className="logo" src="./imagenes/logo.jpg" />
-                </a>  
+                <div className="logoNav">
+                    <a href="#">
+                        <img className="logo" src="./imagenes/logo.jpg" />
+                     </a> 
+                </div> 
                 <div className="navLinks">
                     <a href="#">Inicio</a>
                     <a href="#">Productos</a>

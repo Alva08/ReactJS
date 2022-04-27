@@ -1,0 +1,38 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.titulo h1{
+    font-size: 20px;
+}
+
+.boton{
+    height: 30px;
+    width: 60px;
+    background-color: rgb(119, 119, 119);
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.boton:hover{
+    background-color: rgb(21, 124, 250);
+}
+
+.contador{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+}
+
+.agregar{
+    height:100px;
+    width:100px ;
+}

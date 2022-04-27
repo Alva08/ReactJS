@@ -1,11 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: start;
     align-items: center;
     height: 70px;
     background-color: rgb(255, 255, 255);
@@ -27,7 +22,8 @@
 }
 
 .navLinks{
-    margin-left:200px ;
+    justify-self: center;
+    margin-left: 200px;
 }
 
 .logo{
@@ -35,6 +31,11 @@
     height: 54px;
 }
 
+.logoNav{
+    justify-self: flex-start;
+}
+
 .carrito{
-    margin-left: 700px;
+    justify-self: flex-end;
+    margin-left: 800px;
 }

@@ -1,17 +1,18 @@
 .container{
     display: flex;
     flex-direction: column;
-    height: 1000px;
+    justify-content: start;
+    align-items: center;
+    height: 700px;
     background-color: rgb(196, 193, 193);
 
 }
 
 .container h1{
     font-size: 40px;
-    padding-top: 100px;
     color: black;
 }
 
-.contador{
-    margin-top: 200px;
+.titulo{
+    margin-top: 100px;
 }
