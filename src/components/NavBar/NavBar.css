@@ -9,21 +9,8 @@
     width: 100%;
 }
 
-.nav a{
-    text-decoration: none;
-    margin-right: 40px;
+.logoNav{
     margin-left: 20px;
-    font-size:25px;
-    color: black;
-}
-
-.nav a:hover{
-    color: rgb(21, 124, 250);
-}
-
-.navLinks{
-    justify-self: center;
-    margin-left: 200px;
 }
 
 .logo{
@@ -31,11 +18,23 @@
     height: 54px;
 }
 
-.logoNav{
-    justify-self: flex-start;
+.navLinks{
+    margin-left: 100px;
+}
+
+.navLinks a{
+    text-decoration: none;
+    margin-right: 40px;
+    margin-left: 20px;
+    font-size:25px;
+    color: black;
+}
+
+.navLinks a:hover{
+    color: rgb(21, 124, 250);
 }
 
 .carrito{
-    justify-self: flex-end;
-    margin-left: 800px;
+    margin-left: auto;
+    margin-right: 20px;
 }

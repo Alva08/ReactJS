@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+//import ItemCount from "../ItemCount/ItemCount";
+import getData from "../../services/getData";
+import ItemList from './ItemList'
 import './ItemListContainer.css';
-import ItemCount from "../ItemCount/ItemCount";
+
 
 
 function ItemListContainer({greeting}){
+    const [products, setProducts] = useState([]);
+
+    useEffect( () =>{
+        getData
+        .then(response => console.log(response))
+        .catch(error => console.log("ERROR:", error))
+    }, [])
     return(
         <div className="container">
-            <h1 className="titulo">{greeting}</h1>
-            <div className="contador">
-                <ItemCount /* stock = {5} initial = {1} */ />
-            </div>
+            <h1 className="titulo-list">{greeting}</h1>
+            <ItemList products={products}/>
+            {/* <div>
+                <ItemCount stock = {5} initial = {1} />
+            </div> */}
         </div>
         
     )

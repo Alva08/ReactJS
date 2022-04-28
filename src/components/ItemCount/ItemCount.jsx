@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ItemCount.css';
 
 function ItemCount( {stock , initial} ) {
-    const [count, setCount] = useState({initial});
+    const [count, setCount] = useState(initial);
 
     const onIncrese = () => {
         const newValue = count + 1;
@@ -30,7 +30,7 @@ function ItemCount( {stock , initial} ) {
                 <button className='boton' onClick={ onIncrese }>
                     +
                 </button>
-                <h3 className='cantidad'>{count}</h3>
+                <div className='cantidad'>{count}</div>
                 <button className='boton' onClick={ onDecrese }>
                     -
                 </button>
@@ -38,7 +38,7 @@ function ItemCount( {stock , initial} ) {
             <div className='agregar'>
                 <button className="botonAgregar" onClick={onAdd} >
                     Agregar a carrito
-                </button>
+                </button> 
             </div>
         </div>
 );
