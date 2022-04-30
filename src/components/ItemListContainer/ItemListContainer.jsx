@@ -11,7 +11,7 @@ function ItemListContainer({greeting}){
 
     useEffect( () =>{
         getData
-        .then(response => console.log(response))
+        .then(response => setProducts(response))
         .catch(error => console.log("ERROR:", error))
     }, [])
     return(

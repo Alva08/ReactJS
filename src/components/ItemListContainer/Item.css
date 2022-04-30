@@ -1,0 +1,21 @@
+.cardProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(216, 216, 216);
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border: 1.5px solid rgb(21, 124, 250);
+    border-radius: 10px;
+}
+
+.imagenPorducto{
+    border-radius: 10px;
+    max-width:200px;
+}
+
+.nombreProducto{
+    font-size: 20px;
+}

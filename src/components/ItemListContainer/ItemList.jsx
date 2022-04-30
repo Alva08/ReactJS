@@ -1,17 +1,16 @@
 import React from "react";
 import Item from './Item';
-//import './ItemList.css';
+import './ItemList.css';
 
 
 
 
 function ItemList( {products} ){
     return(
-        <div>
-            <h1>HOLA SOY ITEM LIST</h1>
+        <div className="productos">
             {products.map( (products) => {
                  return(
-                    <Item key={products.id} title={products.nombre} precio={products.precio} />
+                    <Item key={products.id} imagen={products.img} nombre={products.nombre} precio={products.precio} />
                  ) 
              })}        
         </div>
