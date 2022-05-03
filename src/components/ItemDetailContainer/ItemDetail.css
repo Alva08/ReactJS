@@ -1,0 +1,21 @@
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.itemDetail-img{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemDetail{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
