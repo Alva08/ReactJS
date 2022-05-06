@@ -1,6 +1,6 @@
 import './ItemDetail.css'
 
-function ItemDetail(item) {
+function ItemDetail({item}) {
   return (
     <div className='itemContainer' >
         <div className='itemDetail-img'>

@@ -20,17 +20,25 @@
 
 .navLinks{
     margin-left: 100px;
+    display: flex;
+    flex-direction: row;
 }
 
-.navLinks a{
+.navLinks li{
     text-decoration: none;
+    list-style: none;
+}
+
+.navLinks li a{
+    text-decoration: none;
+    list-style: none;
     margin-right: 40px;
     margin-left: 20px;
     font-size:25px;
     color: black;
 }
 
-.navLinks a:hover{
+.navLinks li a:hover{
     color: rgb(21, 124, 250);
 }
 
