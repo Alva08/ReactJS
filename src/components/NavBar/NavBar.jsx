@@ -4,19 +4,19 @@ import CardWidget from "../CardWidget/CardWidget";
 import { NavLink } from "react-router-dom";
 
 
-function NavBar(props){
+function NavBar(){
     return(
         <div className="nav">
             <div className="logoNav">
-                <a href="#">
-                    <img className="logo" src="./imagenes/logo.jpg" />
-                </a> 
+                <li>
+                    <NavLink to="/"><img className="logo" src="./imagenes/logo.jpg" /></NavLink>
+                </li>
             </div> 
             <div>
                 <ul className="navLinks">
-                    <li> <NavLink to="/category/jardineria">Jardineria</NavLink></li>
+                    <li> <NavLink to="/">Productos</NavLink></li>
                     <li> <NavLink to="/category/construccion">Construccion</NavLink></li>
-                    <li> <NavLink to="/category/productos">Productos</NavLink></li>
+                    <li> <NavLink to="/category/jardineria">Jardineria</NavLink></li>
                 </ul>
             </div>
             <div className="carrito">

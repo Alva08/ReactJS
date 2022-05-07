@@ -40,9 +40,7 @@ function ItemListContainer(){
     return(
         <div className="container">
             <h1 className="titulo-list">PRODUCTOS</h1>
-            <ItemList item={prod}/>
-            {/* <ItemCount stock = {5} initial = {1} /> */}
-            
+            <ItemList item={prod}/>  
         </div>
         
     )

@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
+
+
 
 function ItemDetail({item}) {
   return (
@@ -10,6 +14,7 @@ function ItemDetail({item}) {
             <h2>{item?.nombre}</h2>
             <h3>${item?.precio}</h3>
             <p>Detalle del producto</p>
+            {<ItemCount item={item} stock = {item.stock} initial = {1}/>}
         </div>
     </div>
   )
