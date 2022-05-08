@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ItemCount.css';
 
-function ItemCount( {stock , initial} ) {
+function ItemCount( {stock , initial, onAdd} ) {
     const [count, setCount] = useState(initial);
 
     const onIncrese = () => {
@@ -19,10 +19,6 @@ function ItemCount( {stock , initial} ) {
         }
     }
 
-    const onAdd = () => {
-        alert("El producto fue agregado con exito");
-    }
-
     return (
         <div className='contenedor'>
             <div className='contador'>
@@ -35,7 +31,7 @@ function ItemCount( {stock , initial} ) {
                 </button>
             </div>
             <div className='agregar'>
-                <button className="botonAgregar" onClick={onAdd}>
+                <button className="botonAgregar" onClick={ () => (count <= stock) && onAdd(count)}>
                         Agregar al carrito
                 </button> 
             </div>
