@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import CartContext from '../CartContext/CartContext';
@@ -8,7 +8,6 @@ import './ItemDetail.css'
 
 
 function ItemDetail({item}) {
-  /* const [CantProd, setCantProd] = useState(null) */
   const cartContext = useContext(CartContext);
 
   function onAdd(quantityToAdd){
@@ -31,7 +30,7 @@ function ItemDetail({item}) {
             <button onClick={() => {console.log(cartContext.isInCart(item.id))}}>Is in cart</button>
             {cartContext.products.length &&
               <Link to="/cart">
-                <button className='botonTerminar'> Terminar compra ({cartContext.cartQuantity()} item) </button>
+                <button className='botonTerminar'> Terminar compra ({cartContext.cartQuantity()}) item </button>
               </Link>
             }
         </div>
