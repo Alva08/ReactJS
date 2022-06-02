@@ -9,11 +9,11 @@ export function CartContextProvider({children}) {
         return productList.some(item => item.id === id);
     }
 
-    function addProducts(item, quantity){
+    function addProducts(item){
         if(isInCart(item.id)){
-            setProductList(productList.map(p => p.id === item.id ? {...p, quantity: p.quantity + quantity} : p))
+            setProductList(productList.map(p => p.id === item.id ? {...p, quantity: p.quantity + item.quantity} : p))
         }else{
-            setProductList([...productList, {...item, quantity}])
+            setProductList([...productList,item])
         }
     }
 
@@ -32,16 +32,16 @@ export function CartContextProvider({children}) {
         }, 0)
     }
 
-    /* function totalPrice(item){
+    function totalPrice(item){
         return productList.reduce((total, value)=>{
             return total + value.quantity * item.precio;
         }, 0)
     }
 
-    function cantProduct(id){
+    /* function cantProduct(id){
         return productList.find(item => item.id === id).quantity;
-    }
- */
+    } */
+ 
     return (
         <CartContext.Provider value={{
             products: productList,
@@ -49,7 +49,8 @@ export function CartContextProvider({children}) {
             removeProducts,
             clear,
             isInCart,
-            cartQuantity
+            cartQuantity,
+            totalPrice
         }}>
             {children}
         </CartContext.Provider>

@@ -3,16 +3,15 @@ import "./Cart.css"
 import CartItem from "./CartItem";
 import CartContext from '../CartContext/CartContext';
 
-function Cart() {
-    const cartContext = useContext(CartContext);
+function Cart({item}) {
+    const { products, clear } = useContext(CartContext);
     return ( 
         <div className="container">
+            <h1>CART</h1>
             {
-                cartContext.productsList.map(item => {
-                    <CartItem key={item.id} item={item} />
-                })
+                products.map(item => { return <CartItem key={item.id} item={item}/>})
             }
-            <button onClick={() => cartContext.clear()}>Vaciar carrito</button>
+            <button onClick={() => clear()}>Vaciar carrito</button>
         </div>
     )
 }
