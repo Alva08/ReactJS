@@ -1,0 +1,10 @@
+.checkout-container{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout{
+    width: 100px;
+    margin-top: 10px;
+}
