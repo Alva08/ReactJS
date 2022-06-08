@@ -21,32 +21,33 @@ export function CartContextProvider({children}) {
         setProductList([]);
     }
     
-    function removeProducts(id){
-        setProductList(productList.filter(item => item.id !== id));
+    const removeProduct = (id) => {
+        const indexToRemove = productList.findIndex(item => item.id === id);
+        if (productList[indexToRemove].quantity === 1) {
+            setProductList(productList.filter(i => i.id !== id))
+        } else {
+            setProductList(productList.map(p => p.id === id ? {...p, quantity: p.quantity - 1} : p));
+        }
     }
     
    
     function cartQuantity(){
-        return productList.reduce((total, value)=>{
+        productList.reduce((total, value)=>{
             return total + value.quantity;
         }, 0)
     }
 
-    function totalPrice(item){
-        return productList.reduce((total, value)=>{
-            return total + value.quantity * item.precio;
+    function totalPrice(){
+        return productList.reduce((total, value) => {
+            return total * value.quantity
         }, 0)
     }
-
-    /* function cantProduct(id){
-        return productList.find(item => item.id === id).quantity;
-    } */
  
     return (
         <CartContext.Provider value={{
             products: productList,
             addProducts,
-            removeProducts,
+            removeProduct,
             clear,
             isInCart,
             cartQuantity,

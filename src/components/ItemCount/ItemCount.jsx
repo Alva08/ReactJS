@@ -38,11 +38,6 @@ function ItemCount( {stock , initial, onAdd} ) {
                             Agregar al carrito
                     </button>
                 </Link>
-                {/* {products.length &&
-                <Link to="/Cart">
-                    <button className='botonTerminar'> Terminar compra ({cartQuantity()}) item </button>
-                </Link>
-                } */}
             </div>
         </div>
 );

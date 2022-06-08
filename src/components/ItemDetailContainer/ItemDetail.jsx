@@ -22,7 +22,7 @@ function ItemDetail({item}) {
         <div className='itemDetail'>
             <h2>{item?.nombre}</h2>
             <h3>${item?.precio}</h3>
-            <p>Detalle del producto</p>
+            <p>{item.detalle} </p>
             <ItemCount item={item} stock = {item.stock} initial = {1} onAdd={onAdd}/>
             {/* <button onClick={() => {console.log(products)}}>Mostrar carrito</button>
             <button onClick={() => {removeProducts(item.id)}}>Remove products</button>

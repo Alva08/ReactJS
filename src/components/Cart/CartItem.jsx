@@ -1,20 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../CartContext/CartContext';
 import "./CartItem.css"
 
 function CartItem({item}) {
+    const { removeProduct, products, clear, isInCart, cartQuantity, addProducts } = useContext(CartContext);
     return (
         <div>
             <div className='cardCarrito'>
                 <img className='imagenCarrito' src={item.img} alt="imagen producto" />
-                <h1 className='nombreCarrito'>{item.nombre}</h1>
-                <h2>${item.precio}</h2>
-                <h3>Cantidad: {item.quantity}</h3>
-                <h4>{} </h4>
+                <div className='cardCarrito-detalle'>
+                    <h1 className='nombreCarrito'>{item.nombre}</h1>
+                    <h2>${item.precio}</h2>
+                    <div className='cantidad-cart'>
+                        <h3>Cantidad: {item.quantity}</h3>
+                        <button className='btnRemove' onClick={() => {removeProduct(item.id)}}>X</button>
+                    </div>
+                </div>
             </div>
-            <Link to="/checkout">
-                <button>Finalizar compra</button>
-            </Link>
         </div>
     );
 }
