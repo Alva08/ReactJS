@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
 import { CartContextProvider } from './components/CartContext/CartContext';
 import { initializeApp } from "firebase/app";
+
+const root = createRoot(document.getElementById("root"))
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDpcKyHkyB164vFnWe2So5Sj3QTwLEKlnQ",
@@ -18,7 +21,7 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <CartContextProvider>

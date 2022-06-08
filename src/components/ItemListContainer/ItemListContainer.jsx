@@ -10,7 +10,7 @@ function getProducts(category){
 
     const itemCollection = collection(db, "items");
 
-    const q = category && query( tu mmamama
+    const q = category && query(
         itemCollection,
         where('category', '==', category),
     )

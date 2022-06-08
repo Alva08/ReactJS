@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import CartContext from '../CartContext/CartContext';
 import { Link } from 'react-router-dom';
 import './ItemCount.css';
 
 function ItemCount( {stock , initial, onAdd} ) {
+    const { removeProducts, products, clear, isInCart, cartQuantity, addProducts } = useContext(CartContext);
     const [count, setCount] = useState(initial);
 
     const onIncrese = () => {
@@ -31,9 +33,16 @@ function ItemCount( {stock , initial, onAdd} ) {
                 </button>
             </div>
             <div className='agregar'>
-                <button className="botonAgregar" onClick={ () => (count <= stock) && onAdd(count)}>
-                        Agregar al carrito
-                </button> 
+                <Link to="/Cart">
+                    <button className="botonAgregar" onClick={ () => (count <= stock) && onAdd(count)}>
+                            Agregar al carrito
+                    </button>
+                </Link>
+                {/* {products.length &&
+                <Link to="/Cart">
+                    <button className='botonTerminar'> Terminar compra ({cartQuantity()}) item </button>
+                </Link>
+                } */}
             </div>
         </div>
 );

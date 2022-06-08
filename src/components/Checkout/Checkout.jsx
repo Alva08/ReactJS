@@ -16,7 +16,8 @@ const Checkout = () => {
 
     const handleInput = (e) => {
         setBuyer(({
-            ...buyer, [e.target.name]:e.target.value
+            ...buyer, 
+            [e.target.name]:e.target.value
         }))
     }
 
