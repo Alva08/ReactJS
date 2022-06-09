@@ -8,7 +8,7 @@ import './ItemDetail.css'
 
 
 function ItemDetail({item}) {
-  const { removeProducts, products, clear, isInCart, cartQuantity, addProducts } = useContext(CartContext);
+  const { addProducts } = useContext(CartContext);
 
   function onAdd(quantityToAdd){
     addProducts({quantity: quantityToAdd, ...item})
@@ -24,10 +24,6 @@ function ItemDetail({item}) {
             <h3>${item?.precio}</h3>
             <p>{item.detalle} </p>
             <ItemCount item={item} stock = {item.stock} initial = {1} onAdd={onAdd}/>
-            {/* <button onClick={() => {console.log(products)}}>Mostrar carrito</button>
-            <button onClick={() => {removeProducts(item.id)}}>Remove products</button>
-            <button onClick={() => {clear()}}>Clear</button>
-            <button onClick={() => {console.log(isInCart(item.id))}}>Is in cart</button> */}
         </div>
     </div>
   )
