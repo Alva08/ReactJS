@@ -39,7 +39,7 @@ export function CartContextProvider({children}) {
 
     function totalPrice(){
         return productList.reduce((total, value) => {
-            return total * value.quantity
+            return total += value.quantity *value.precio
         }, 0)
     }
  

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import CartContext from '../CartContext/CartContext';
+import  {collection, addDoc, getFirestore } from "firebase/firestore"
 import "./Checkout.css"
 
 const Checkout = () => {
 
-    const {productList, totalPrice} = useContext(CartContext)
+    const {productList, totalPrice, clear} = useContext(CartContext)
 
     const [buyer, setBuyer ] = useState({
         Nombre:"",
@@ -22,12 +23,25 @@ const Checkout = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDeafult()
-        console.log(buyer)
-        /* console.log("productList", productList);
-        const total = totalPrice();
-        console.log("total", total);
- */
+        e.preventDefault()
+        const dia = new Date()
+        const items = productList.map(e=> {return {id:e.id,title:e.name,price:e.price,amount:e.amount}})        
+        const total = totalPrice()
+        const data = {buyer,items,dia,total}
+        console.log("data",data)  
+        generateOrder(data) 
+    }
+
+    const generateOrder = async(data) => {
+        const db = getFirestore();
+        try {
+            const col = collection(db,"Orders")
+            const order = await addDoc(col,data) 
+            console.log("order", order)
+            console.log("order", order.id)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
